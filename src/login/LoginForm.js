@@ -20,6 +20,20 @@ const Text = styled.div`
     transform: translate(-50%, -50%);
 `
 
+const Container = styled.div`
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    width:45%;
+`;
+
+const MainContainer = styled.div`
+    display: flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    width:100%;
+
+`;
 class LoginForm extends Component{
     state={
         inputValue:""
@@ -32,22 +46,25 @@ class LoginForm extends Component{
             <>
                 
                 <Text> We wish you a happy coding! </Text>
-                <div>
+                <MainContainer>
+                <Container>
                 <InputTextComp 
-                ariaLableText="Enter the username in the input Box"
-                name="userNameInputBox"
-                labelText="userName"
-                domElementID="loginPageUser"
-                inputType="text"
-            />
-            <InputTextComp 
-                ariaLableText="Enter the password in the input Box"
-                name="passwordInputBox"
-                labelText="password"
-                domElementID="userpassword"
-                inputType="password"
-            />
-                </div>
+                    ariaLableText="Enter the username in the input Box"
+                    name="userNameInputBox"
+                    labelText="userName"
+                    domElementID="loginPageUser"
+                    inputType="text"
+                />
+                <InputTextComp 
+                     ariaLableText="Enter the password in the input Box"
+                     name="passwordInputBox"
+                     labelText="password"
+                     domElementID="userpassword"
+                    inputType="password"
+                />
+            </Container>
+                </MainContainer>
+                
             </>
         )
     }
