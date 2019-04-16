@@ -48,20 +48,24 @@ class LoginForm extends Component {
 				<Text> We wish you a happy coding! </Text>
 				<MainContainer>
 					<Container>
-						<InputTextComp
-							ariaLableText="Enter the username in the input Box"
-							name="userNameInputBox"
-							labelText="userName"
-							domElementID="loginPageUser"
-							inputType="text"
-						/>
-						<InputTextComp
-							ariaLableText="Enter the password in the input Box"
-							name="passwordInputBox"
-							labelText="password"
-							domElementID="userpassword"
-							inputType="password"
-						/>
+						<div>
+							<InputTextComp
+								ariaLableText="Enter the username in the input Box"
+								name="userNameInputBox"
+								labelText="userName"
+								domElementID="loginPageUser"
+								inputType="text"
+							/>
+						</div>
+						<div>
+							<InputTextComp
+								ariaLableText="Enter the password in the input Box"
+								name="passwordInputBox"
+								labelText="password"
+								domElementID="userpassword"
+								inputType="password"
+							/>
+						</div>
 						<FormButton />
 					</Container>
 				</MainContainer>

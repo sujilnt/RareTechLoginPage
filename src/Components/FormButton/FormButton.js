@@ -11,8 +11,8 @@ const Container = styled.div` ,;
 const FormButton = () => {
 	return (
 		<Container>
-			<Button name="sign up" href="/sign up" primary={true} />
-			<Button name="login " href="/login" />
+			<Button name="sign up" href="/signup" primary={true} />
+			<Button name="login " href="/loginsuccess" />
 		</Container>
 	);
 };
