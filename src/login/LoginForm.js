@@ -37,15 +37,28 @@ const MainContainer = styled.div`
 `;
 class LoginForm extends Component {
 	state = {
-		inputValue: ''
+		username: '',
+		password: ''
 	};
-	handleChange = () => {
-		console.log('change');
+	handleUserNameChange = (e) => {
+		const currentValue = e.target.value;
+		this.setState((prevState, props) => {
+			return {
+				userName: currentValue
+			};
+		});
+	};
+	handlePasswordChange = (e) => {
+		const currentValue = e.target.value;
+		this.setState((prevState, props) => {
+			return {
+				password: currentValue
+			};
+		});
 	};
 	render() {
 		return (
 			<div>
-				<Text> We wish you a happy coding! </Text>
 				<MainContainer>
 					<Container>
 						<div>
@@ -55,6 +68,7 @@ class LoginForm extends Component {
 								labelText="userName"
 								domElementID="loginPageUser"
 								inputType="text"
+								onhandleChange={this.handleUserNameChange}
 							/>
 						</div>
 						<div>
@@ -64,6 +78,7 @@ class LoginForm extends Component {
 								labelText="password"
 								domElementID="userpassword"
 								inputType="password"
+								onhandleChange={this.handlePasswordChange}
 							/>
 						</div>
 						<FormButton />
