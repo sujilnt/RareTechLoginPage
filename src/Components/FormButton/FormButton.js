@@ -8,11 +8,16 @@ const Container = styled.div` ,;
     margin: 20px 0;
 `;
 
-const FormButton = () => {
+const FormButton = (props) => {
 	return (
 		<Container>
 			<Button name="sign up" href="/signup" primary={true} />
-			<Button name="login " href="/loginsuccess" />
+			<Button
+				name="login "
+				href="/loginsuccess"
+				onClick={props.onClicklogin}
+				style={props.disabled ? { pointerEvents: 'none' } : {}}
+			/>
 		</Container>
 	);
 };

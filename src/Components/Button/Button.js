@@ -10,6 +10,7 @@ const ButtonStyles = styled.div`
 	border: 2px solid palevioletred;
 	border-radius: 3px;
 	cursor: pointer;
+
 	:hover {
 		background: ${(props) => (!props.primary ? 'palevioletred' : 'white')};
 		color: ${(props) => (!props.primary ? 'white' : 'palevioletred')};
@@ -21,8 +22,14 @@ const ButtonStyles = styled.div`
 const Button = (props) => {
 	return (
 		<Fragment>
-			<Link to={props.href} style={{ textTransform: 'capitalize', textDecoration: 'none' }}>
-				<ButtonStyles primary={props.primary}>{props.name}</ButtonStyles>
+			<Link
+				to={props.href}
+				style={{ textTransform: 'capitalize', textDecoration: 'none' }}
+				onClick={props.onClick}
+			>
+				<ButtonStyles primary={props.primary} disabled={props.disabled}>
+					{props.name}
+				</ButtonStyles>
 			</Link>
 		</Fragment>
 	);

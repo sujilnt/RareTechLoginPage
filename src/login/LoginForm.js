@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import image from '../logo.png';
 import InputTextComp from '../Components/InputText/InputText';
 import FormButton from '../Components/FormButton/FormButton';
-
+import validateUser from '../utils/utils';
 // Put your code here
 // Feel free to create more files with more components
 
@@ -56,6 +56,10 @@ class LoginForm extends Component {
 			};
 		});
 	};
+	onClickLoginButton = (e) => {
+		const validate = validateUser(this.state);
+		console.log('check', validate);
+	};
 	render() {
 		return (
 			<div>
@@ -81,7 +85,11 @@ class LoginForm extends Component {
 								onhandleChange={this.handlePasswordChange}
 							/>
 						</div>
-						<FormButton />
+						<FormButton
+							onClicklogin={this.onClickLoginButton}
+							validatedetails={validateUser}
+							statedata={this.state}
+						/>
 					</Container>
 				</MainContainer>
 			</div>
